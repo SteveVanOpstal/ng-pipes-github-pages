@@ -1,0 +1,52 @@
+{
+  "name": "ng-pipes-github-pages",
+  "version": "1.0.0-alpha.1",
+  "description": "Github pages for ng-pipes",
+  "main": "index.js",
+  "scripts": {
+    "build:syntax": "npm run tsc -- --sourceMap syntax-parser.ts",
+    "presyntax": "npm run build:syntax",
+    "syntax": "node syntax-parser.js",
+    "prebuild": "npm run syntax",
+    "build": "npm run webpack -- --progress",
+    "dev": "npm run webpack-dev-server -- --inline --progress --compress --watch --env.dev",
+    "test": "test",
+    "tsc": "node_modules/.bin/tsc",
+    "webpack": "node_modules/.bin/webpack",
+    "webpack-dev-server": "node_modules/.bin/webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a8m/ng-pipes.git"
+  },
+  "author": "Steve Van Opstal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a8m/ng-pipes/issues"
+  },
+  "homepage": "https://github.com/a8m/ng-pipes#readme",
+  "dependencies": {
+    "@angular/common": "^2.4.7",
+    "@angular/compiler": "^2.4.7",
+    "@angular/core": "^2.4.7",
+    "@angular/http": "^2.4.7",
+    "@angular/platform-browser": "^2.4.7",
+    "@angular/platform-browser-dynamic": "^2.4.7",
+    "@types/core-js": "^0.9.35",
+    "@types/node": "^7.0.5",
+    "@types/reflect-metadata": "0.0.5",
+    "glob": "^7.1.1",
+    "google-code-prettify": "^1.0.5",
+    "ng-pipes": "^0.1.1"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.0.4-rc.0",
+    "html-webpack-plugin": "^2.28.0",
+    "json-loader": "^0.5.4",
+    "raw-loader": "^0.5.1",
+    "source-map-loader": "^0.1.6",
+    "typescript": "^2.1.6",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
