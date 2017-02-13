@@ -52,6 +52,9 @@ module.exports = (options) => {
         template: 'index.ejs',
         version: pipesVersion,
         baseUrl: options.dev ? '/' : './' + repositoryName + '/',
+        env: options.dev ? 'development' : 'production',
+        host: 'localhost',
+        port: 8080,
         minify: options.dev ? false : {
           collapseWhitespace: true,
           removeAttributeQuotes: true,
