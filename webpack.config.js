@@ -2,6 +2,7 @@ let webpack = require('webpack');
 let {CheckerPlugin} = require('awesome-typescript-loader');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let pipesVersion = require('./node_modules/ng-pipes/package.json').version;
+let repositoryName = require('./package.json').name;
 
 let path = require('path');
 function root(args) {
@@ -50,6 +51,7 @@ module.exports = (options) => {
       new CheckerPlugin(), new HtmlWebpackPlugin({
         template: 'index.ejs',
         version: pipesVersion,
+        baseUrl: options.dev ? '/' : './' + repositoryName + '/',
         minify: options.dev ? false : {
           collapseWhitespace: true,
           removeAttributeQuotes: true,
