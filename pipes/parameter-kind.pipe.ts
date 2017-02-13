@@ -1,15 +1,14 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import * as ts from 'typescript';
 import {Parameter} from '../syntax-parser';
 
 enum translator {
-  any = ts.SyntaxKind.AnyKeyword,
-  boolean = ts.SyntaxKind.BooleanKeyword,
-  number = ts.SyntaxKind.NumberKeyword,
-  string = ts.SyntaxKind.StringKeyword,
-  // unknown = ts.SyntaxKind.TypeReference,
-  // unknown = ts.SyntaxKind.TypeLiteral,
-  Array = ts.SyntaxKind.ArrayType
+  any = 118,      // ts.SyntaxKind.AnyKeyword
+  boolean = 121,  // ts.SyntaxKind.BooleanKeyword,
+  number = 132,   // ts.SyntaxKind.NumberKeyword,
+  string = 134,   // ts.SyntaxKind.StringKeyword,
+  // unknown = 157 // ts.SyntaxKind.TypeReference,
+  // unknown = 161 // ts.SyntaxKind.TypeLiteral,
+  Array = 162  // ts.SyntaxKind.ArrayType
 }
 
 @Pipe({name: 'npParameterKind'})
